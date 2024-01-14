@@ -1,7 +1,7 @@
 //prepara la conección a la base de datos
-var mysql = require('mysql');
+//var mysql = require('mysql');
 const fs = require('fs')
-var con = mysql.createConnection({
+/* var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "sistematizaciondatos_com",
@@ -12,25 +12,10 @@ var con = mysql.createConnection({
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-});
-
-//prueba exótica
-let algo = {
-    name: "perro sarnoso",
-    data: [
-        {
-            name: "como su papa",
-            value: 3
-        },{
-            name: "sapo hpta",
-            value: 5
-        }
-    ]
-};
-console.log(algo)
+}); */
 
 //carga los datos de la base de datos para almacenarlo en un archivo json bien makia, bien exótico
-con.query('select re.codigo, re.nombre, rp.detalle, count(rp.detalle) as cantidad from res_asignacion_pensamiento rap join res_espacio re on (rap.codigo_espacio = re.codigo) join res_pensamiento rp on (rap.codigo_pensamiento = rp.codigo) group by re.codigo, rp.codigo order by re.codigo;', function (error, results, fields) {
+/* con.query('select re.codigo, re.nombre, rp.detalle, count(rp.detalle) as cantidad from res_asignacion_pensamiento rap join res_espacio re on (rap.codigo_espacio = re.codigo) join res_pensamiento rp on (rap.codigo_pensamiento = rp.codigo) group by re.codigo, rp.codigo order by re.codigo;', function (error, results, fields) {
     if (error)
         throw error;
     
@@ -66,7 +51,7 @@ con.query('select re.codigo, re.nombre, rp.detalle, count(rp.detalle) as cantida
 });
 
 //finaliza la conección
-con.end();
+con.end(); */
 
 
 var express = require('express');

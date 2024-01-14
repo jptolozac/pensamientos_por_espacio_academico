@@ -73,5 +73,3 @@ function continente(){
 }
 
 continente();
-
-console.log("sapo gonorreaaaa")

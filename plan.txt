@@ -1,0 +1,15 @@
+cantidad de pensamientos específicos que hay por espacio académico
+
+es decir, cuantos pensamientos de este hay en este espacio académico y así
+
+espacio académico - pensamiento	 - veces que está el pensamiento
+conjunto grande   - conjunto pequeño - cantidad en el conjunto pequeño
+
+
+
+select re.codigo, re.nombre, rp.detalle, count(rp.detalle) as cantidad
+from res_asignacion_pensamiento rap  join res_espacio re on (rap.codigo_espacio = re.codigo)
+									join res_pensamiento rp on (rap.codigo_pensamiento = rp.codigo)
+
+group by re.codigo, rp.codigo
+order by re.codigo;
